@@ -16,7 +16,7 @@ Yunusemre Belediyesi web sitesinin ana sayfası ve öneri/şikayet formu için h
 Projeyi yerel bilgisayarınıza klonlayın:
 
 ```bash
-git clone https://github.com
+git clone https://github.com/selvanurKirac/yunusemre-belediyesi-staj
 ```
 
 **Hızlı Çalıştırma:** Proje klasörünü açın ve `index.html` dosyasını herhangi bir internet tarayıcısında çift tıklayarak çalıştırın.

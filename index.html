@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yunusemre Belediyesi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- =============== AYDINLATMA METNİ (ÇEREZ) =============== -->
+    <div id="modalAydinlatma" class="modal-aydinlatma">
+        <div class="modal-content-aydinlatma">
+            <span class="close-aydinlatma">&times;</span>
+            <h2>Aydınlatma Metni</h2>
+            <p>Bu web sitesi çerezleri kullanmaktadır. Devam ederek çerez kullanımını kabul etmiş olursunuz.</p>
+            <button id="acceptBtnAydinlatma">Kabul Ediyorum</button>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+
+    <!-- =============== NAVBAR =============== -->
+    <nav class="nav" aria-label="Ana menü">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://www.yunusemre.bel.tr/assets/img/logo.svg" alt="Yunusemre Belediyesi" class="yunusemre_logo"></a>
+            </div>
+
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+
+                    <!-- BAŞKAN -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Başkan</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <h3>M. Semih BALABAN</h3>
+                                    <h4>YUNUSEMRE BELEDİYE BAŞKANI</h4>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/baskandan-mesaj">Başkan'dan Mesaj</a>
+                                    <a href="https://www.yunusemre.bel.tr/baskanin-ozgecmisi">Başkan'ın Özgeçmişi</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/baskanin-gorev-ve-yetkileri">Görev ve Yetkileri</a>
+                                    <a href="https://www.yunusemre.bel.tr/baskana-mesaj">Başkana Mesaj</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- HİZMETLERİMİZ -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Hizmetlerimiz</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Makbuz/TCKimlikNoIleMakbuzSorgulama/">Makbuz Sorgulama</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Tahsilat/Index/">Tahsilat Bilgileri</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Beyan/EmlakBeyanOlustur/">Emlak Beyanı Oluştur</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Rayic/Index/">Rayiç Sorgulama</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/sikayet-ve-oneri">Dilek-Şikayet Oluştur</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Nikah/Index/">Nikah Sorgulama</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/ImzaliBelge/Sorgulama/">İmza Sorgulama</a>
+                                    <a href="https://www.yunusemre.bel.tr/hizmet/kat/sosyal-hizmetler">Sosyal Hizmetler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Beyan/CevreTemizlikBeyanOlustur/">ÇTV Beyanı Oluştur</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Borc/Index/">Borç Sorgulama</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- BİLGİ HİZMETLERİ -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Bilgi Hizmetleri</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/kurumsal-kimlik">Kurumsal Kimlik</a>
+                                    <a href="https://www.turkiye.gov.tr/yunusemre-belediyesi">E-Devlet</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/gazete-arsivi">Yunusemre Gazetesi</a>
+                                    <a href="https://www.cimer.gov.tr/">CİMER</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.ilan.gov.tr/">Basın İlan Kurumu</a>
+                                    <a href="https://www.yunusemre.bel.tr/ilan-ve-ihaleler">İhaleler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/onemli-telefonlar">Önemli Telefonlar</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/">Online İşlemler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/dilekce-ve-formlar">Dilekçe ve Formlar</a>
+                                    <a href="https://www.yunusemre.bel.tr/cerez-politikasi">Çerez Politikası</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/k-v-k-k-bilgi-guvenligi">K.V.K.K. Bilgi Güvenliği</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- YUNUSEMRE -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Yunusemre</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/aigai-antik-kenti">Aigai Antik Kenti</a>
+                                    <a href="https://www.yunusemre.bel.tr/canakkale-sehitleri-aniti">Çanakkale Şehitleri Anıtı</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/ayniali-camii">Aynıali Camii</a>
+                                    <a href="https://www.yunusemre.bel.tr/ivaz-pasa-camii">İvaz Paşa Camii</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/aglayan-kaya">Ağlayan Kaya</a>
+                                    <a href="https://www.yunusemre.bel.tr/mesir-tabiat-parki">Mesir Tabiat Parkı</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- GÜNCEL -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Güncel</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/haberler">Haberler</a>
+                                    <a href="https://www.yunusemre.bel.tr/etkinlikler">Etkinlikler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/duyurular">Duyurular</a>
+                                    <a href="https://www.yunusemre.bel.tr/ziyaretcilerimiz">Ziyaretçilerimiz</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/kurslarimiz">Kurslarımız</a>
+                                    <a href="https://www.yunusemre.bel.tr/fotograf-galerileri">Fotoğraf Galerileri</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/gazete-arsivi">Yunusemre Gazetesi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- İLETİŞİM -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">İletişim</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <h3>Bize Ulaşın</h3>
+                                    <a href="#iletisim">İletişim Bilgileri</a>
+                                    <a href="form.html">Önerileriniz için tıklayın</a>
+                                    <a href="form.html">Şikayetleriniz için tıklayın</a>
+                                </div>
+                                <div class="column45">
+                                    <h3>İletişim Bilgileri</h3>
+                                    <a href="#iletisim">Faks</a>
+                                    <a href="#iletisim">E-Posta</a>
+                                    <a href="tel:4446209">Çağrı Merkezi</a>
+                                </div>
+                                <div class="column45">
+                                    <h3>Diğer Kanallar</h3>
+                                    <a href="#iletisim">Adres</a>
+                                    <a href="https://wa.me/905313903727">Whatsapp</a>
+                                    <a href="#iletisim">Telefon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Hamburger (mobil) -->
+            <span class="navTrigger" role="button" tabindex="0" aria-label="Menüyü aç / kapat" aria-controls="mainListDiv" aria-expanded="false">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <!-- =============== SLIDER =============== -->
+    <div class="slider">
+        <div class="list">
+            <div class="item active">
+                <img src="image/img1.jpg" alt="">
+                <div class="content">
+                    <p></p>
+                    <h2>Yunusemre Belediyesine Hoşgeldiniz!</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img2.jpg" alt="">
+                <div class="content">
+                    <p></p>
+                    <h2>Yunusemre Belediyesine Hoşgeldiniz!</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img3.jpg" alt="">
+                <div class="content">
+                    <p></p>
+                    <h2>Yunusemre Belediyesine Hoşgeldiniz!</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img4.jpg" alt="">
+                <div class="content">
+                    <p></p>
+                    <h2>Yunusemre Belediyesine Hoşgeldiniz!</h2>
+                </div>
+            </div>
+            <div class="item">
+                <img src="image/img5.jpg" alt="">
+                <div class="content">
+                    <p></p>
+                    <h2>Yunusemre Belediyesine Hoşgeldiniz!</h2>
+                </div>
+            </div>
+        </div>
+
+        <!-- Oklar -->
+        <div class="arrows">
+            <button id="prev" type="button" aria-label="Önceki">&lt;</button>
+            <button id="next" type="button" aria-label="Sonraki">&gt;</button>
+        </div>
+
+        <!-- Küçük resimler -->
+        <div class="thumbnail">
+            <div class="item active"><img src="image/img1.jpg" alt=""><div class="content"></div></div>
+            <div class="item"><img src="image/img2.jpg" alt=""><div class="content"></div></div>
+            <div class="item"><img src="image/img3.jpg" alt=""><div class="content"></div></div>
+            <div class="item"><img src="image/img4.jpg" alt=""><div class="content"></div></div>
+            <div class="item"><img src="image/img5.jpg" alt=""><div class="content"></div></div>
+        </div>
+    </div>
+
+    <!-- =============== DUYURULAR / İHALELER VE İLANLAR =============== -->
+    <div class="container-wrapper">
+
+        <div class="subforum-container">
+            <div class="announcements-box">
+                <div class="announcements-header">
+                    <h2>Duyurular</h2>
+                </div>
+                <ul class="announcements-list">
+                    <li class="announcements-item">
+                        <div>
+                            <i class="announcements-icon"></i>
+                            <p>Duyuru:</p>
+                        </div>
+                        <div>
+                            <span>Yayınlandı: 10-6-2021</span>
+                        </div>
+                    </li>
+                    <li class="announcements-item">
+                        <div>
+                            <i class="announcements-icon"></i>
+                            <p>Duyuru:</p>
+                        </div>
+                        <div>
+                            <span>Yayınlandı: 10-6-2021</span>
+                        </div>
+                    </li>
+                </ul>
+                <!-- Duyuruları geçmek için oklar -->
+                <div class="announcements-navigation">
+                    <button class="prev-button" type="button" aria-label="Önceki duyuru">❮</button>
+                    <span class="announcement-index">1/2</span>
+                    <button class="next-button" type="button" aria-label="Sonraki duyuru">❯</button>
+                </div>
+                <div class="announcements-footer">
+                    <a href="#" class="all-announcements-button">Tüm Duyurular</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="subforum-container">
+            <div class="announcements-box">
+                <div class="announcements-header">
+                    <h2>İhaleler ve İlanlar</h2>
+                </div>
+                <ul class="announcements-list">
+                    <li class="announcements-item">
+                        <div>
+                            <i class="announcements-icon"></i>
+                            <p>İhale:</p>
+                        </div>
+                        <div>
+                            <span>Yayınlandı: 10-6-2021</span>
+                        </div>
+                    </li>
+                    <li class="announcements-item">
+                        <div>
+                            <i class="announcements-icon"></i>
+                            <p>İlan:</p>
+                        </div>
+                        <div>
+                            <span>Yayınlandı: 10-6-2021</span>
+                        </div>
+                    </li>
+                </ul>
+                <div class="announcements-navigation">
+                    <button class="prev-button" type="button" aria-label="Önceki ilan">❮</button>
+                    <span class="announcement-index">1/2</span>
+                    <button class="next-button" type="button" aria-label="Sonraki ilan">❯</button>
+                </div>
+                <div class="announcements-footer">
+                    <a href="#" class="all-announcements-button">Tüm İhale ve İlanlar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- =============== HABERLER =============== -->
+    <section class="product">
+        <h2 class="product-category">Haberler</h2>
+        <button class="pre-btn" type="button" aria-label="Önceki haberler"><img src="image/arrow.png" alt=""></button>
+        <button class="nxt-btn" type="button" aria-label="Sonraki haberler"><img src="image/arrow.png" alt=""></button>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-789cff26967a7feff7d0c955d5ae1f9135d9c701.png" class="product-thumb" alt="Kurtuluş Günü Konseri">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Kurtuluş Günü Konseri</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-ab00f742867934fa9a58433dd50ed1d6894e8af7.png" class="product-thumb" alt="Kadınlara Özel Yüzme Kursu">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Kadınlara Özel Yüzme Kursu</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-d380c55c2250e517cdebd76543b2cf2536e24ffb.png" class="product-thumb" alt="Çocuk Parklarımız">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Çocuk Parklarımız</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-25463a33544b3afad267d30c1a10b53a28ee2c82.png" class="product-thumb" alt="Yunusemre Koristlerimiz">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Yunusemre Koristlerimiz</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-01d03d7b8424d9afe1a250327d3fc3cbb82b496e.png" class="product-thumb" alt="Motokros Pistimiz">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Motokros Pistimiz</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-b26a98292cb85ab78850cf7f3c38e01b2e9ab0eb.png" class="product-thumb" alt="Futbol Turnuvası">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Futbol Turnuvası</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-9fb04a31e20250a4903e6b7c4627823ffab908f6.png" class="product-thumb" alt="Yuntdağı Kalkınma Çalıştayı">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Yuntdağı Kalkınma Çalıştayı</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-7da13fabf4e2cfb4f18d81ad1c4c70094f54fb1c.png" class="product-thumb" alt="Kentsel Dönüşüm Toplantısı">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Kentsel Dönüşüm Toplantısı</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-6af6f64455bef161d93e8f653a6545b9c37ef134.png" class="product-thumb" alt="Pazarcılar Odasıyla Toplantı">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Pazarcılar Odasıyla Toplantı</h2>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-ee94fa4efd3101f3cdd70dbdd5b304fea96b7ba4.png" class="product-thumb" alt="Bilim Dolu Bir Yaz">
+                    <button class="card-btn" type="button">Haberin detayları</button>
+                </div>
+                <div class="product-info">
+                    <h2 class="product-brand">Bilim Dolu Bir Yaz</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============== YUNUSEMRE'DE YAŞAM =============== -->
+    <section class="living-section">
+        <h2>Yunusemre'de Yaşam</h2>
+        <p>Yunusemre Belediyesi tarafından hayata geçirilen projeler ile daha yaşanabilir bir ilçe.</p>
+        <div class="living-cards">
+            <div class="card">
+                <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-b3b3b43fc8773845aac382bbbc040dab0209b926.png" alt="Park ve Bahçeler">
+                <h3>Park ve Bahçeler</h3>
+                <p>Yeni yapılan parklar ve yeşil alanlar ile huzur dolu yaşam alanları.</p>
+                <a href="#">Devamını Oku</a>
+            </div>
+            <div class="card">
+                <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-1215394b97edb8ba14bf6565ae9c723f87aca346.png" alt="Kültür ve Sanat">
+                <h3>Kültür ve Sanat</h3>
+                <p>Yunusemre'de sanata ve kültüre yapılan yatırımlar.</p>
+                <a href="#">Devamını Oku</a>
+            </div>
+            <div class="card">
+                <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-4cb8a77a4aa25f136b3105f7bb23eabfa32696da.png" alt="Sosyal Projeler">
+                <h3>Sosyal Projeler</h3>
+                <p>Toplumsal dayanışmayı güçlendiren sosyal projeler.</p>
+                <a href="#">Devamını Oku</a>
+            </div>
+            <div class="card">
+                <img src="https://www.yunusemre.bel.tr/imgServ/img/uploads/image-78c3077e03b87195cfd6d945916a3663dd6dc718.png" alt="Tarih">
+                <h3>Tarih</h3>
+                <p>Keşfedilmeye ve görülmeye değer tarihçemiz ve tarihi yapılarımız.</p>
+                <a href="#">Devamını Oku</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- =============== FOTOĞRAF / VİDEO / KURS =============== -->
+    <div class="custom-card-container">
+        <div class="custom-card">
+            <div class="custom-icon-container">
+                <img src="image/bookimg.png" alt="Fotoğraf ikonu" class="custom-card-icon">
+            </div>
+            <div class="custom-card-content">
+                <a href="https://www.yunusemre.bel.tr/fotograf-galerileri">FOTOĞRAF GALERİSİ</a>
+                <p>Yunusemre Fotoğraflarını...</p>
+            </div>
+        </div>
+        <div class="custom-card">
+            <div class="custom-icon-container">
+                <img src="image/videoimg.png" alt="Video ikonu" class="custom-card-icon">
+            </div>
+            <div class="custom-card-content">
+                <a href="https://www.yunusemre.bel.tr/yunusemre_videolar">VİDEOLAR</a>
+                <p>Yunusemre ile ilgili tüm videolara...</p>
+            </div>
+        </div>
+        <div class="custom-card">
+            <div class="custom-icon-container">
+                <img src="image/homeimg.png" alt="Kurs ikonu" class="custom-card-icon">
+            </div>
+            <div class="custom-card-content">
+                <a href="https://www.yunusemre.bel.tr/kurslarimiz">KURSLARIMIZ</a>
+                <p>Belediyemizin başlatmış olduğu...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============== FOOTER =============== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="section">
+                <h3>KURUMSAL</h3>
+                <ul>
+                    <li><a href="https://www.yunusemre.bel.tr/misyon-ve-vizyon">Misyon ve Vizyon</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/teskilat-semasi">Teşkilat Şeması</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/baskan-yardimcilarimiz">Başkan Yardımcıları</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/yonetim-ilkeleri">Yönetim İlkeleri</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/mudurluklerimiz">Müdürlüklerimiz</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/hizmet-standartlari">Hizmet Standartları</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/kamu-ic-kontrol-standartlari">Kontrol Standartları</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/performans-programi">Performans Programı</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/stratejik-plan">Stratejik Plan</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/faaliyet-raporlari">Faaliyet Raporu</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/mali-durum-ve-beklentiler-raporu">Mali Durum</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/belediye-yonetmeligi">Belediye Yönetmeliği</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/kalite-ve-cevre-politikasi">Kalite ve Çevre Politikası</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/ic-kontrol-uyum-eylem-plani">İç Kontrol Uyum Eylem Planı</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/kurumsal-kimlik">Kurumsal Kimlik</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>HİZMETLERİMİZ</h3>
+                <ul>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Makbuz/TCKimlikNoIleMakbuzSorgulama/">Makbuz Doğrulama</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Borc/Index/">Borç Sorgulama</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/sikayet-ve-oneri">Dilek-Şikayet Oluştur</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/ImzaliBelge/Sorgulama/">İmza Sorgulama</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Beyan/CevreTemizlikBeyanOlustur/">ÇTV Beyanı Oluştur</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Beyan/EmlakBeyanOlustur/">Emlak Beyanı Oluştur</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Tahsilat/Index/">Tahsilat Bilgileri</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Rayic/Index/">Rayiç Sorgulama</a></li>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/Nikah/Index/">Nikah Sorgulama</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>BİLGİ HİZMETLERİ</h3>
+                <ul>
+                    <li><a href="https://ebelediye.yunusemre.bel.tr/">Online İşlemler</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/gazete-arsivi">Yunusemre Gazetesi</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/ilan-ve-ihaleler">İhaleler</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/kurumsal-kimlik">Kurumsal Kimlik</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/dilekce-ve-formlar">Dilekçe ve Formlar</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/k-v-k-k-bilgi-guvenligi">K.V.K.K. Bilgi Güvenliği</a></li>
+                    <li><a href="https://www.turkiye.gov.tr/yunusemre-belediyesi">E-Devlet</a></li>
+                    <li><a href="https://www.cimer.gov.tr/">CİMER</a></li>
+                    <li><a href="https://www.ilan.gov.tr/">Basın İlan Kurumu</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/onemli-telefonlar">Önemli Telefonlar</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/cerez-politikasi">Çerez Politikası</a></li>
+                </ul>
+            </div>
+
+            <div class="section">
+                <h3>YUNUSEMRE</h3>
+                <ul>
+                    <li><a href="https://www.yunusemre.bel.tr/aigai-antik-kenti">Aigai Antik Kenti</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/ayniali-camii">Aynıali Camii</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/aglayan-kaya">Ağlayan Kaya</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/mesir-tabiat-parki">Mesir Tabiat Parkı</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/canakkale-sehitleri-aniti">Çanakkale Şehitleri Anıtı</a></li>
+                    <li><a href="https://www.yunusemre.bel.tr/ivaz-pasa-camii">İvaz Paşa Camii</a></li>
+                </ul>
+            </div>
+
+            <div class="section contact-info" id="iletisim">
+                <h3>BİZE ULAŞIN</h3>
+                <div>
+                    <strong>Çağrı Merkezi:</strong> 444 62 09
+                </div>
+                <div>
+                    <strong>Whatsapp:</strong> 531 390 3727
+                </div>
+                <table>
+                    <tr>
+                        <td><strong>Telefon:</strong></td>
+                        <td>+90 236 123 45 67</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Faks:</strong></td>
+                        <td>+90 236 765 43 21</td>
+                    </tr>
+                    <tr>
+                        <td><strong>E-posta:</strong></td>
+                        <td>info@kurum.com</td>
+                    </tr>
+                    <tr>
+                        <td><strong>KEP Adresi:</strong></td>
+                        <td>kurum@hs01.kep.tr</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </footer>
+
+    <!-- =============== SCRIPTLER (her biri yalnızca bir kez) =============== -->
+    <script src="app.js"></script>          <!-- slider -->
+    <script src="js/scripts.js"></script>   <!-- navbar: küçülme, hamburger, mobil dropdown -->
+
+    <!-- Duyurular / İhaleler: oklarla sırayla göster -->
+    <script>
+        document.querySelectorAll('.announcements-box').forEach(function (box) {
+            var items = box.querySelectorAll('.announcements-item');
+            var prev = box.querySelector('.prev-button');
+            var next = box.querySelector('.next-button');
+            var indexLabel = box.querySelector('.announcement-index');
+            var current = 0;
+
+            if (!items.length || !prev || !next || !indexLabel) return;
+
+            function render() {
+                items.forEach(function (item, i) {
+                    item.style.display = (i === current) ? 'block' : 'none';
+                });
+                indexLabel.textContent = (current + 1) + '/' + items.length;
+            }
+
+            prev.addEventListener('click', function () {
+                if (current > 0) { current--; render(); }
+            });
+            next.addEventListener('click', function () {
+                if (current < items.length - 1) { current++; render(); }
+            });
+
+            render();
+        });
+    </script>
+
+    <script src="script.js"></script>      <!-- haberler kaydırıcısı -->
+
+</body>
+</html>

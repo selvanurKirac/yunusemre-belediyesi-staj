@@ -1,0 +1,1015 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* =========================================================
+   GENEL
+   ========================================================= */
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body{
+    font-family: Poppins;
+    background-color: #010101;
+    color: #eee;
+    font-size: 15px;
+}
+
+svg{
+    width: 25px;
+}
+
+.myH2 {
+    text-align: center;
+    font-size: 4rem;
+}
+.myP {
+    text-align: justify;
+    padding-left: 15%;
+    padding-right: 15%;
+    font-size: 20px;
+}
+
+/* =========================================================
+   SLIDER
+   ========================================================= */
+.slider{
+    height: 100vh;
+    position: relative;
+}
+.slider .list .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: .5s;
+}
+.slider .list .item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.slider .list .item::after{
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.7) 20%, transparent);
+}
+.slider .list .item .content{
+    position: absolute;
+    left: 10%;
+    top: 20%;
+    width: 500px;
+    max-width: 80%;
+    z-index: 1;
+}
+.slider .list .item .content p:nth-child(1){
+    text-transform: uppercase;
+    letter-spacing: 10px;
+}
+.slider .list .item .content h2{
+    font-size: 50px;
+    margin: 0;
+}
+.slider .list .item.active{
+    opacity: 1;
+    z-index: 10;
+}
+@keyframes showContent {
+    to{
+        transform: translateY(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+.slider .list .item.active p:nth-child(1),
+.slider .list .item.active h2,
+.slider .list .item.active p:nth-child(3){
+    transform: translateY(30px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent .5s .7s ease-in-out 1 forwards;
+}
+.slider .list .item.active h2{
+    animation-delay: 1s;
+}
+
+.arrows{
+    position: absolute;
+    top: 50%;
+    right: 50px;
+    z-index: 100;
+}
+.arrows button{
+    background-color: #eee5;
+    border: none;
+    font-family: monospace;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: x-large;
+    color: #eee;
+    transition: .5s;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: black;
+}
+
+.thumbnail::-webkit-scrollbar{
+    width: 0;
+}
+.thumbnail {
+    position: absolute;
+    bottom: 50px;
+    z-index: 11;
+    display: flex;
+    gap: 10px;
+    width: 100%;
+    height: 100px;
+    padding: 0 50px;
+    overflow: auto;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail .item {
+    width: 75px;
+    height: 75px;
+    filter: brightness(.5);
+    transition: .5s;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.thumbnail .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.thumbnail .item.active{
+    filter: brightness(1);
+}
+.thumbnail .item .content{
+    position: absolute;
+    inset: auto 10px 10px 10px;
+}
+
+@media screen and (max-width: 768px) {
+    .slider .list .item .content h2 {
+        font-size: 30px;
+    }
+    .slider .list .item .content p {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 678px) {
+    .thumbnail{
+        justify-content: start;
+    }
+    .arrows{
+        display: none;
+    }
+}
+
+/* =========================================================
+   NAVBAR
+   Yapı: .nav > .container > (.logo + .main_list > ul.navlinks > li.dropdown)
+   ========================================================= */
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 84px;
+    line-height: 1.4;
+    z-index: 1500;
+    background: linear-gradient(to bottom, rgba(0,0,0,.7), rgba(0,0,0,0));
+    transition: all 0.4s ease;
+}
+
+/* jQuery sayfa kayınca .affix ekler (küçülür, koyu zemin) */
+.nav.affix {
+    height: 66px;
+    background: #111;
+}
+
+.nav .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 0 28px;
+}
+
+.nav .logo {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+}
+.nav .logo a {
+    display: block;
+    line-height: 0;
+}
+.yunusemre_logo {
+    display: block;
+    width: 68px;
+    height: auto;
+    object-fit: cover;
+    transition: width .4s ease;
+}
+.nav.affix .yunusemre_logo {
+    width: 52px;
+}
+
+.main_list {
+    height: 100%;
+}
+.navlinks {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    list-style: none;
+}
+.navlinks > li {
+    display: flex;
+    height: 100%;
+}
+
+/* Hamburger (yalnızca mobilde görünür) */
+.navTrigger {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 25px;
+    margin: auto;
+    position: absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+}
+.navTrigger i {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+}
+.navTrigger i:nth-child(1) { animation: inT .8s backwards reverse; }
+.navTrigger i:nth-child(2) { margin: 5px 0; animation: inM .8s backwards reverse; }
+.navTrigger i:nth-child(3) { animation: inBtm .8s backwards reverse; }
+
+.navTrigger.active i:nth-child(1) { animation: inT .8s forwards; }
+.navTrigger.active i:nth-child(2) { animation: inM .8s forwards; }
+.navTrigger.active i:nth-child(3) { animation: inBtm .8s forwards; }
+
+@keyframes inM {
+    50%  { transform: rotate(0deg); }
+    100% { transform: rotate(45deg); }
+}
+@keyframes inT {
+    0%   { transform: translateY(0px) rotate(0deg); }
+    50%  { transform: translateY(9px) rotate(0deg); }
+    100% { transform: translateY(9px) rotate(135deg); }
+}
+@keyframes inBtm {
+    0%   { transform: translateY(0px) rotate(0deg); }
+    50%  { transform: translateY(-9px) rotate(0deg); }
+    100% { transform: translateY(-9px) rotate(135deg); }
+}
+
+/* ---------- Dropdown: ana link ---------- */
+.dropdown {
+    position: static;   /* panel, .nav'a göre tam genişlikte açılır */
+}
+.dropbtn {
+    display: flex;
+    align-items: center;
+    padding: 0 clamp(10px, 1.3vw, 22px);
+    font-size: clamp(14px, 1.45vw, 19px);
+    font-weight: 500;
+    line-height: 1.2;
+    white-space: nowrap;
+    text-decoration: none;
+    color: #fff;
+    transition: color .3s;
+}
+.dropdown:hover > .dropbtn,
+.dropdown:focus-within > .dropbtn {
+    color: #ffa500;
+}
+.nav a:focus-visible,
+.navTrigger:focus-visible {
+    outline: 2px solid #ffa500;
+    outline-offset: -2px;
+}
+
+/* ---------- Dropdown: panel ---------- */
+.dropdown-content {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 100%;
+    max-height: calc(100vh - 84px);
+    overflow-y: auto;
+    padding: 24px 28px 28px;
+    background: #111;
+    border-top: 2px solid #ffa500;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .55);
+    color: #eee;
+    text-align: left;
+    z-index: 1;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+}
+.nav.affix .dropdown-content {
+    max-height: calc(100vh - 66px);
+}
+/* link ile panel arasındaki boşlukta menü kapanmasın */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -24px;
+    height: 24px;
+}
+
+/* Sütunlar ekran genişliğine göre kendiliğinden sığar */
+.row45 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Her sütun, "Yunusemre'de Yaşam" kartları gibi koyu yuvarlak kart */
+.column45 {
+    padding: 14px 12px;
+    background: #222;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    text-align: left;
+}
+.column45 br,
+.column45 p:empty {
+    display: none;
+}
+.column45 h3 {
+    padding: 0 12px;
+    margin-bottom: 4px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #ffa500;
+}
+.column45 h4 {
+    padding: 0 12px;
+    margin-bottom: 8px;
+    font-size: .8rem;
+    font-weight: 500;
+    color: #9aa0a6;
+}
+.column45 a {
+    display: block;
+    padding: 9px 12px;
+    border-radius: 8px;
+    font-size: .95rem;
+    font-weight: 500;
+    line-height: 1.35;
+    color: #eee;
+    text-decoration: none;
+    transition: background .15s ease, color .15s ease;
+}
+.column45 a:hover,
+.column45 a:focus-visible {
+    color: #ffa500;
+    background: rgba(255, 165, 0, .12);
+}
+
+/* Masaüstü: hover / klavye ile aç */
+@media (min-width: 769px) {
+    .dropdown:hover > .dropdown-content,
+    .dropdown:focus-within > .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
+/* ---------- Mobil (≤768px): hamburger + accordion ---------- */
+@media screen and (max-width: 768px) {
+
+    .nav .container {
+        padding: 0 20px;
+    }
+    .yunusemre_logo,
+    .nav.affix .yunusemre_logo {
+        width: 52px;
+    }
+    .navTrigger {
+        display: block;
+    }
+
+    /* Menü paneli: hamburger ile .show_list eklenir */
+    .main_list {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+        background: #111;
+    }
+    .main_list.show_list {
+        display: block;
+        height: auto;
+        max-height: calc(100vh - 66px);
+        overflow-y: auto;
+    }
+
+    .navlinks {
+        flex-direction: column;
+        align-items: stretch;
+        height: auto;
+        padding: 6px 0 16px;
+        background: #111;
+    }
+    .navlinks > li {
+        display: block;
+        height: auto;
+        border-bottom: 1px solid #222;
+    }
+    .dropbtn {
+        width: 100%;
+        justify-content: space-between;
+        padding: 16px 24px;
+        font-size: 1.1rem;
+    }
+    .dropbtn::after {
+        content: "";
+        width: 8px;
+        height: 8px;
+        margin-left: 10px;
+        border-right: 2px solid currentColor;
+        border-bottom: 2px solid currentColor;
+        transform: rotate(45deg);
+        transition: transform .2s ease;
+    }
+    .dropdown.open > .dropbtn {
+        color: #ffa500;
+    }
+    .dropdown.open > .dropbtn::after {
+        transform: rotate(225deg);
+    }
+
+    /* Panel: akışın içinde, dokununca açılır (dropdown.js .open ekler) */
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        max-height: none;
+        padding: 4px 16px 16px;
+        background: #181818;
+        border-top: 0;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+    .nav.affix .dropdown-content {
+        max-height: none;
+    }
+    .dropdown-content::before {
+        display: none;
+    }
+    .dropdown.open > .dropdown-content {
+        display: block;
+    }
+    .row45 {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    .column45 {
+        padding: 10px 8px;
+    }
+    .column45 a {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .container {
+        margin: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dropdown-content,
+    .column45 a,
+    .dropbtn::after,
+    .yunusemre_logo {
+        transition: none;
+    }
+}
+
+/* =========================================================
+   DUYURULAR ve İHALELER
+   ========================================================= */
+.container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 40px 20px 0;
+}
+
+.subforum-container {
+    flex: 1;
+    max-width: 48%;
+    font-style: normal;
+    margin-bottom: 20px;
+}
+
+.announcements-box {
+    border: 2px solid #ffa500;
+    border-radius: 3px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.announcements-header {
+    background-color: #f7b63c;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 44px;
+    padding: 0 15px;
+}
+.announcements-header > h2 {
+    color: #000000;
+    font-family: "Poppins";
+    font-weight: 600;
+    font-size: 20px;
+    height: 27px;
+    line-height: 27px;
+    margin-left: 17px;
+    white-space: nowrap;
+}
+
+.announcements-list {
+    list-style-type: none;
+    padding: 11px 8px 8px 8px;
+    background-color: #000000;
+    margin: 0;
+    flex-grow: 1;
+}
+.announcements-item {
+    background-color: #ffffff;
+    padding: 8px 16px 10px 16px;
+    font-family: "Poppins";
+    margin-bottom: 16px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 3px rgba(35, 44, 53, 0.15);
+}
+.announcements-item > div:nth-child(1) {
+    display: flex;
+    align-items: center;
+}
+.announcements-item > div:nth-child(1) > p {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 21px;
+    margin: 0;
+    color: #ffa500;
+}
+.announcements-item p {
+    margin: 0;
+}
+.announcements-item p > a {
+    text-decoration: none;
+    color: #000000;
+}
+.announcements-item > div:nth-child(3) {
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 21px;
+    color: #ffa500;
+    margin-top: 5px;
+}
+.announcements-item > div > span {
+    margin-right: 24px;
+}
+.announcements-icon {
+    display: block;
+    margin-right: 8px;
+    width: 10px;
+    height: 14px;
+    background-image: url("https://e7.pngegg.com/pngimages/895/799/png-clipart-computer-icons-megaphone-announcement-angle-text-thumbnail.png");
+    background-size: 10px 14px;
+    background-repeat: no-repeat;
+}
+
+.announcements-content {
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.announcement {
+    font-family: "Poppins";
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.announcements-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.prev-button,
+.next-button {
+    padding: 0;
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #555;
+}
+.announcement-index {
+    font-family: "Poppins";
+    font-size: 14px;
+    color: #555;
+}
+
+.announcements-footer {
+    text-align: right;
+    padding: 15px;
+}
+.all-announcements-button {
+    background-color: #f7b63c;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: "Poppins";
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+.all-announcements-button:hover {
+    background-color: #ffa500;
+}
+
+@media (max-width: 768px) {
+    .subforum-container {
+        max-width: 100%;
+    }
+}
+@media (max-width: 480px) {
+    .announcements-header > h2 {
+        font-size: 18px;
+    }
+    .announcements-item > div:nth-child(1) > p {
+        font-size: 14px;
+    }
+    .announcements-item > div:nth-child(3) {
+        font-size: 12px;
+    }
+    .announcement {
+        font-size: 14px;
+    }
+    .announcement-index {
+        font-size: 12px;
+    }
+}
+
+/* =========================================================
+   HABERLER
+   ========================================================= */
+.product {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+.product-category {
+    padding: 0 10vw;
+    font-size: 50px;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-transform: capitalize;
+}
+.product-container {
+    padding: 0 10vw;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+.product-container::-webkit-scrollbar {
+    display: none;
+}
+.product-card {
+    flex: 0 0 auto;
+    width: 350px;
+    height: 350px;
+    margin-right: 40px;
+}
+.product-image {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+.product-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.card-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    width: 90%;
+    text-transform: capitalize;
+    border: none;
+    outline: none;
+    background: #fff;
+    border-radius: 5px;
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+.product-card:hover .card-btn {
+    opacity: 1;
+}
+.card-btn:hover {
+    background: #ffa500;
+    color: #fff;
+}
+.product-info {
+    width: 100%;
+    height: 100px;
+    padding-top: 10px;
+}
+.product-short-description {
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    overflow: hidden;
+    opacity: 0.5;
+    text-transform: capitalize;
+    margin: 5px 0;
+}
+.pre-btn,
+.nxt-btn {
+    border: none;
+    width: 10vw;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    cursor: pointer;
+    z-index: 8;
+}
+.pre-btn img,
+.nxt-btn img {
+    opacity: 0.5;
+}
+.pre-btn:hover img,
+.nxt-btn:hover img {
+    opacity: 1;
+}
+.pre-btn {
+    left: 0;
+    transform: rotate(180deg);
+}
+.nxt-btn {
+    right: 0;
+}
+
+/* =========================================================
+   YUNUSEMRE'DE YAŞAM
+   ========================================================= */
+.living-section {
+    text-align: center;
+    padding: 50px 0;
+    background-color: #000000;
+    color: #eee;
+}
+.living-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    font-family: Poppins;
+    font-weight: bold;
+}
+.living-section p {
+    font-size: 1em;
+    margin-bottom: 40px;
+    font-family: Poppins;
+    font-weight: 300;
+}
+.living-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.card {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 275px;
+    padding: 20px;
+    text-align: left;
+}
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+.card h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+    font-family: Poppins;
+    font-weight: bold;
+}
+.card a {
+    display: block;
+    margin-top: 10px;
+    font-size: 1em;
+    font-family: Poppins;
+    font-weight: 500;
+    color: #ffa500;
+    text-align: right;
+}
+
+/* =========================================================
+   FOTOĞRAF / VİDEO / KURS KARTLARI
+   ========================================================= */
+.custom-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 20px;
+    gap: 25px;
+}
+.custom-card {
+    background-color: #ffa500;
+    color: white;
+    border-radius: 15px;
+    width: 250px;
+    height: 125px;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out, background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.custom-card:hover {
+    transform: translateY(-5px);
+    background-color: #222222;
+    color: #ffa500;
+}
+.custom-icon-container {
+    flex: 0 0 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+.custom-card-icon {
+    width: 70px;
+    height: 70px;
+}
+.custom-card-content {
+    flex: 1;
+}
+.custom-card-content h3 {
+    font-size: 16px;
+    margin: 0 0 10px;
+}
+.custom-card-content p {
+    font-size: 14px;
+    margin: 0;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+.footer {
+    background-color: #000000;
+    color: white;
+    padding: 20px 0;
+}
+.footer .container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.footer h3 {
+    margin-bottom: 10px;
+}
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+.footer ul li {
+    margin-bottom: 5px;
+}
+.footer ul li a {
+    color: white;
+    text-decoration: none;
+}
+.footer ul li a:hover {
+    text-decoration: underline;
+}
+.footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .contact-info div {
+    margin-bottom: 10px;
+}
+
+/* =========================================================
+   AYDINLATMA METNİ (çerez penceresi)
+   ========================================================= */
+.modal-aydinlatma {
+    display: none;
+    position: fixed;
+    z-index: 2000;              /* navbar (1500) üstünde kalsın */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.modal-content-aydinlatma {
+    background-color: black;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+}
+.close-aydinlatma {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-aydinlatma:hover,
+.close-aydinlatma:focus {
+    color: #f7b63c;
+    cursor: pointer;
+}
+
+/* Genel buton stili */
+button {
+    padding: 10px 20px;
+    background-color: #ffa500;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #f7b63c;
+}

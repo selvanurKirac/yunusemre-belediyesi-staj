@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öneri ve Şikayet Formu | Yunusemre Belediyesi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+
+    <!-- =============== AYDINLATMA METNİ (ÇEREZ) =============== -->
+    <div id="modalAydinlatma" class="modal-aydinlatma">
+        <div class="modal-content-aydinlatma">
+            <span class="close-aydinlatma">&times;</span>
+            <h2>Aydınlatma Metni</h2>
+            <p>Bu web sitesi çerezleri kullanmaktadır. Devam ederek çerez kullanımını kabul etmiş olursunuz.</p>
+            <button id="acceptBtnAydinlatma">Kabul Ediyorum</button>
+        </div>
+    </div>
+    <script src="script1.js"></script>
+
+    <!-- =============== NAVBAR =============== -->
+    <nav class="nav affix" data-affix-always aria-label="Ana menü">
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><img src="https://www.yunusemre.bel.tr/assets/img/logo.svg" alt="Yunusemre Belediyesi" class="yunusemre_logo"></a>
+            </div>
+
+            <div id="mainListDiv" class="main_list">
+                <ul class="navlinks">
+
+                    <!-- BAŞKAN -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Başkan</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <h3>M. Semih BALABAN</h3>
+                                    <h4>YUNUSEMRE BELEDİYE BAŞKANI</h4>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/baskandan-mesaj">Başkan'dan Mesaj</a>
+                                    <a href="https://www.yunusemre.bel.tr/baskanin-ozgecmisi">Başkan'ın Özgeçmişi</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/baskanin-gorev-ve-yetkileri">Görev ve Yetkileri</a>
+                                    <a href="https://www.yunusemre.bel.tr/baskana-mesaj">Başkana Mesaj</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- HİZMETLERİMİZ -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Hizmetlerimiz</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Makbuz/TCKimlikNoIleMakbuzSorgulama/">Makbuz Sorgulama</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Tahsilat/Index/">Tahsilat Bilgileri</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Beyan/EmlakBeyanOlustur/">Emlak Beyanı Oluştur</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Rayic/Index/">Rayiç Sorgulama</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/sikayet-ve-oneri">Dilek-Şikayet Oluştur</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Nikah/Index/">Nikah Sorgulama</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/ImzaliBelge/Sorgulama/">İmza Sorgulama</a>
+                                    <a href="https://www.yunusemre.bel.tr/hizmet/kat/sosyal-hizmetler">Sosyal Hizmetler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Beyan/CevreTemizlikBeyanOlustur/">ÇTV Beyanı Oluştur</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/Giris/Index/?returnURL=/Borc/Index/">Borç Sorgulama</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- BİLGİ HİZMETLERİ -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Bilgi Hizmetleri</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/kurumsal-kimlik">Kurumsal Kimlik</a>
+                                    <a href="https://www.turkiye.gov.tr/yunusemre-belediyesi">E-Devlet</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/gazete-arsivi">Yunusemre Gazetesi</a>
+                                    <a href="https://www.cimer.gov.tr/">CİMER</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.ilan.gov.tr/">Basın İlan Kurumu</a>
+                                    <a href="https://www.yunusemre.bel.tr/ilan-ve-ihaleler">İhaleler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/onemli-telefonlar">Önemli Telefonlar</a>
+                                    <a href="https://ebelediye.yunusemre.bel.tr/">Online İşlemler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/dilekce-ve-formlar">Dilekçe ve Formlar</a>
+                                    <a href="https://www.yunusemre.bel.tr/cerez-politikasi">Çerez Politikası</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/k-v-k-k-bilgi-guvenligi">K.V.K.K. Bilgi Güvenliği</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- YUNUSEMRE -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Yunusemre</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/aigai-antik-kenti">Aigai Antik Kenti</a>
+                                    <a href="https://www.yunusemre.bel.tr/canakkale-sehitleri-aniti">Çanakkale Şehitleri Anıtı</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/ayniali-camii">Aynıali Camii</a>
+                                    <a href="https://www.yunusemre.bel.tr/ivaz-pasa-camii">İvaz Paşa Camii</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/aglayan-kaya">Ağlayan Kaya</a>
+                                    <a href="https://www.yunusemre.bel.tr/mesir-tabiat-parki">Mesir Tabiat Parkı</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- GÜNCEL -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Güncel</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/haberler">Haberler</a>
+                                    <a href="https://www.yunusemre.bel.tr/etkinlikler">Etkinlikler</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/duyurular">Duyurular</a>
+                                    <a href="https://www.yunusemre.bel.tr/ziyaretcilerimiz">Ziyaretçilerimiz</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/kurslarimiz">Kurslarımız</a>
+                                    <a href="https://www.yunusemre.bel.tr/fotograf-galerileri">Fotoğraf Galerileri</a>
+                                </div>
+                                <div class="column45">
+                                    <a href="https://www.yunusemre.bel.tr/gazete-arsivi">Yunusemre Gazetesi</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <!-- İLETİŞİM -->
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">İletişim</a>
+                        <div class="dropdown-content">
+                            <div class="row45">
+                                <div class="column45">
+                                    <h3>Bize Ulaşın</h3>
+                                    <a href="index.html#iletisim">İletişim Bilgileri</a>
+                                    <a href="form.html">Önerileriniz için tıklayın</a>
+                                    <a href="form.html">Şikayetleriniz için tıklayın</a>
+                                </div>
+                                <div class="column45">
+                                    <h3>İletişim Bilgileri</h3>
+                                    <a href="index.html#iletisim">Faks</a>
+                                    <a href="index.html#iletisim">E-Posta</a>
+                                    <a href="tel:4446209">Çağrı Merkezi</a>
+                                </div>
+                                <div class="column45">
+                                    <h3>Diğer Kanallar</h3>
+                                    <a href="index.html#iletisim">Adres</a>
+                                    <a href="https://wa.me/905313903727">Whatsapp</a>
+                                    <a href="index.html#iletisim">Telefon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Hamburger (mobil) -->
+            <span class="navTrigger" role="button" tabindex="0" aria-label="Menüyü aç / kapat" aria-controls="mainListDiv" aria-expanded="false">
+                <i></i>
+                <i></i>
+                <i></i>
+            </span>
+        </div>
+    </nav>
+
+    <!-- =============== FORM =============== -->
+    <main class="form-page">
+        <h1 class="page-title">Öneri ve Şikayet Formu</h1>
+        <p class="page-lead">Görüş, talep ve şikayetlerinizi bize iletebilirsiniz. <span class="required">İşaretli</span> alanlar zorunludur.</p>
+
+        <form id="oneriForm" action="https://formsubmit.co/topuzece@hotmail.com" method="POST" enctype="multipart/form-data">
+            <!-- FormSubmit ayarları -->
+            <input type="hidden" name="_subject" value="Yunusemre Belediyesi - Öneri / Şikayet Formu">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_next" value="">
+
+            <!-- İçerik türü -->
+            <section class="form-section">
+                <h2 id="tur-baslik">İçerik Türü</h2>
+                <div class="choice-group" role="radiogroup" aria-labelledby="tur-baslik">
+                    <div class="choice">
+                        <input type="radio" id="tur-bilgi" name="İçerik Türü" value="Bilgi" required>
+                        <label for="tur-bilgi">Bilgi</label>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" id="tur-talep" name="İçerik Türü" value="Talep">
+                        <label for="tur-talep">Talep</label>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" id="tur-tesekkur" name="İçerik Türü" value="Teşekkür">
+                        <label for="tur-tesekkur">Teşekkür</label>
+                    </div>
+                    <div class="choice">
+                        <input type="radio" id="tur-sikayet" name="İçerik Türü" value="Şikayet">
+                        <label for="tur-sikayet">Şikayet</label>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Kişisel bilgiler -->
+            <section class="form-section">
+                <h2>Kişisel Bilgiler</h2>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="first_name" class="required">İsim</label>
+                        <input type="text" id="first_name" name="İsim" autocomplete="given-name" required>
+                    </div>
+                    <div class="field">
+                        <label for="last_name" class="required">Soyisim</label>
+                        <input type="text" id="last_name" name="Soyisim" autocomplete="family-name" required>
+                    </div>
+                    <div class="field">
+                        <label for="tc_no" class="required">T.C. Kimlik No</label>
+                        <input type="text" id="tc_no" name="T.C. Kimlik No" inputmode="numeric" pattern="[0-9]{11}" maxlength="11" title="11 haneli T.C. kimlik numarası" autocomplete="off" required>
+                    </div>
+                    <div class="field">
+                        <label for="email" class="required">E-posta</label>
+                        <input type="email" id="email" name="email" autocomplete="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="phone_number" class="required">Cep Telefonu</label>
+                        <input type="tel" id="phone_number" name="Cep Telefonu" inputmode="tel" placeholder="05XX XXX XX XX" autocomplete="tel" required>
+                    </div>
+                    <div class="field">
+                        <label for="age">Yaş</label>
+                        <input type="number" id="age" name="Yaş" min="10" max="90">
+                    </div>
+                    <div class="field">
+                        <label for="birthdate">Doğum Tarihi</label>
+                        <input type="date" id="birthdate" name="Doğum Tarihi" autocomplete="bday">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Adres -->
+            <section class="form-section">
+                <h2>Talep / Şikayet Adres Bilgileri</h2>
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="mahalle" class="required">Mahalle</label>
+                        <input type="text" id="mahalle" name="Mahalle" required>
+                    </div>
+                    <div class="field">
+                        <label for="street">Cadde / Sokak</label>
+                        <input type="text" id="street" name="Cadde / Sokak">
+                    </div>
+                    <div class="field">
+                        <label for="outer_door">Dış Kapı No</label>
+                        <input type="text" id="outer_door" name="Dış Kapı No">
+                    </div>
+                    <div class="field">
+                        <label for="inner_door">İç Kapı No</label>
+                        <input type="text" id="inner_door" name="İç Kapı No">
+                    </div>
+                    <div class="field full">
+                        <label for="extra_address">Ek Adres</label>
+                        <input type="text" id="extra_address" name="Ek Adres">
+                    </div>
+                </div>
+            </section>
+
+            <!-- İçerik -->
+            <section class="form-section">
+                <h2>İçerik Bilgileri</h2>
+                <div class="form-grid">
+                    <div class="field full">
+                        <label for="message" class="required">Açıklama</label>
+                        <textarea id="message" name="Açıklama" rows="5" placeholder="Mesajınızı buraya yazın..." required></textarea>
+                    </div>
+                    <div class="field">
+                        <label for="file_photo">Fotoğraf yükle</label>
+                        <input type="file" id="file_photo" name="Fotoğraf" accept="image/png, image/jpeg">
+                    </div>
+                    <div class="field">
+                        <label for="file_document">Dosya yükle</label>
+                        <input type="file" id="file_document" name="Dosya" accept="image/png, image/jpeg, .pdf, .docx">
+                    </div>
+                </div>
+            </section>
+
+            <button type="submit" class="btn-primary">Formu Gönder</button>
+        </form>
+    </main>
+
+    <!-- Gönderim sonrası görünen pencere -->
+    <div class="result-modal" id="sonucModal" role="dialog" aria-modal="true" aria-labelledby="sonucBaslik" hidden>
+        <div class="result-box">
+            <button type="button" class="result-close" data-close aria-label="Kapat">&times;</button>
+            <img src="image/message.png" alt="" onerror="this.remove()">
+            <h2 id="sonucBaslik">Mesajınız<br>tarafımıza ulaştı!</h2>
+            <button type="button" class="btn-primary" data-close>Kapat</button>
+        </div>
+    </div>
+
+    <!-- =============== FOOTER =============== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="section contact-info" id="iletisim">
+                <h3>BİZE ULAŞIN</h3>
+                <div><strong>Çağrı Merkezi:</strong> <a href="tel:4446209">444 62 09</a></div>
+                <div><strong>Whatsapp:</strong> <a href="https://wa.me/905313903727">531 390 3727</a></div>
+                <div><a href="index.html">Ana sayfaya dön</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>   <!-- navbar -->
+    <script src="form.js"></script>         <!-- form -->
+
+</body>
+</html>
